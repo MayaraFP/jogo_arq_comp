@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15172d">
+  <title>ARQ // Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen-noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#hub"><span class="brand-mark">✦</span><span>ARQ<span class="accent">//</span>QUEST</span></a>
+    <div class="top-status"><span class="pulse"></span> SISTEMA ONLINE <span class="divider">|</span> LV. 01</div>
+  </header>
+
+  <main id="app">
+    <section class="view" data-view="hub">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">ARQUIVO DE TREINAMENTO // 03</p>
+          <h1>Aprenda a<br><span class="glitch" data-text="arquitetura">arquitetura</span><br>jogando.</h1>
+          <p class="hero-text">Um pequeno arcade de conceitos computacionais. Explore as salas, resolva os desafios e desbloqueie o próximo nível do seu conhecimento.</p>
+          <div class="hero-actions"><a class="button primary" href="#crossword">INICIAR MISSÃO <span>→</span></a><a class="text-link" href="#about">como funciona ↓</a></div>
+        </div>
+        <div class="hero-art" aria-label="Ilustração decorativa de um monitor de computador">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="pixel-sprite">◈<br><small>CPU</small></div>
+          <div class="terminal-window"><div class="terminal-head"><i></i><i></i><i></i><span>memory_map.exe</span></div><div class="terminal-body"><span class="terminal-dim">01</span> LOAD <b>KNOWLEDGE</b><br><span class="terminal-dim">02</span> MAP <b>ARCHITECTURE</b><br><span class="terminal-dim">03</span> PLAY<span class="cursor">_</span></div></div>
+          <span class="art-label label-a">DATA<br>STREAM</span><span class="art-label label-b">▲ 04.03</span>
+        </div>
+      </div>
+      <div class="section-heading"><div><p class="eyebrow">SELECIONE UMA FASE</p><h2>Escolha seu desafio</h2></div><span class="mono muted">03 QUESTS AVAILABLE</span></div>
+      <div class="quest-grid">
+        <a class="quest-card quest-cyan" href="#crossword"><span class="quest-number">01</span><span class="quest-icon">▦</span><span class="quest-tag">WORD GRID</span><h3>Cross<br>memory</h3><p>Conecte as palavras e revele o mapa.</p><span class="card-arrow">↗</span><span class="card-dots">···</span></a>
+        <a class="quest-card quest-pink" href="#termo"><span class="quest-number">02</span><span class="quest-icon">▤</span><span class="quest-tag">DAILY RUN</span><h3>Termo<br>de bits</h3><p>Seis tentativas. Uma palavra. Zero atalhos.</p><span class="card-arrow">↗</span><span class="card-dots">···</span></a>
+        <a class="quest-card quest-gold" href="#sort"><span class="quest-number">03</span><span class="quest-icon">✣</span><span class="quest-tag">DRAG & DROP</span><h3>Organiza<br>o sistema</h3><p>Monte os grupos e restaure a ordem.</p><span class="card-arrow">↗</span><span class="card-dots">···</span></a>
+      </div>
+      <div class="tip-strip"><span class="tip-icon">✦</span><span><b>HINT DO DIA</b> Memória é o mapa. Cada conceito ocupa um lugar.</span><a href="#crossword">começar agora →</a></div>
+    </section>
+
+    <section class="view game-view" data-view="crossword">
+      <div class="game-header"><div><a class="back-link" href="#hub">← HUB PRINCIPAL</a><p class="eyebrow">FASE 01 // WORD GRID</p><h1>Cross<span class="accent">memory</span></h1><p>As pistas são coordenadas. Preencha o mapa com os 12 termos de arquitetura.</p></div><div class="score-box"><span>CHANCES RESTANTES</span><strong id="crossword-chances">3 <small>/ 3</small></strong><em id="crossword-score">ACERTOS: 0/12</em></div></div>
+      <div class="game-layout"><div class="board-panel"><div id="crossword-board" class="crossword-board" aria-label="Tabuleiro de palavras cruzadas"></div><div class="game-actions"><button class="button primary" id="check-crossword">CONFERIR MAPA</button><button class="button ghost" id="reset-crossword">REINICIAR</button><span id="crossword-feedback" class="feedback"></span></div></div><aside class="clues-panel"><div class="panel-title"><span>ARQUIVO DE PISTAS</span><button class="hint-button" data-hint="crossword">✦ dica</button></div><div id="crossword-hint" class="hint-message"></div><div class="clue-columns"><div><h3>HORIZONTAIS</h3><ol id="across-clues"></ol></div><div><h3>VERTICAIS</h3><ol id="down-clues"></ol></div></div></aside></div>
+    </section>
+
+    <section class="view game-view" data-view="termo">
+      <div class="game-header"><div><a class="back-link" href="#hub">← HUB PRINCIPAL</a><p class="eyebrow">FASE 02 // DAILY RUN</p><h1>Termo<span class="accent"> de bits</span></h1><p>Descubra o termo secreto em seis tentativas. As cores mostram o caminho.</p></div><div class="score-box"><span>CHANCES RESTANTES</span><strong id="termo-attempts">6 <small>/ 6</small></strong></div></div>
+      <div class="termo-layout"><div class="termo-panel"><div id="termo-board" class="termo-board"></div><div class="keypad" id="keypad"></div><div class="game-actions center"><button class="button primary" id="submit-termo">ENVIAR PALPITE</button><button class="button ghost" id="reset-termo">NOVO RUN</button></div></div><aside class="side-note"><div class="panel-title"><span>COMO JOGAR</span><button class="hint-button" data-hint="termo">✦ dica</button></div><div id="termo-hint" class="hint-message"></div><p>Digite um termo de 3 letras da arquitetura computacional e envie. <b>Verde</b> está no lugar certo; <b>âmbar</b> existe, mas mudou de posição.</p><div id="termo-message" class="result-message"></div></aside></div>
+    </section>
+
+    <section class="view game-view" data-view="sort">
+      <div class="game-header"><div><a class="back-link" href="#hub">← HUB PRINCIPAL</a><p class="eyebrow">FASE 03 // DRAG & DROP</p><h1>Organiza<span class="accent"> o sistema</span></h1><p>Arraste cada termo para seu grupo. Reative os módulos do sistema.</p></div><div class="score-box"><span>CHANCES RESTANTES</span><strong id="sort-chances">3 <small>/ 3</small></strong><em id="sort-score">ACERTOS: 0/4</em></div></div>
+      <div class="sort-layout"><div class="sort-terms"><div class="panel-title"><span>BLOCOS DISPONÍVEIS</span><button class="hint-button" data-hint="sort">✦ dica</button></div><div id="sort-hint" class="hint-message"></div><div id="term-bank" class="term-bank"></div></div><div id="sort-groups" class="sort-groups"></div></div><div class="game-actions"><button class="button primary" id="check-sort">VERIFICAR SISTEMA</button><button class="button ghost" id="reset-sort">REINICIAR</button><span id="sort-feedback" class="feedback"></span></div>
+    </section>
+
+    <section class="view info-view" data-view="about"><a class="back-link" href="#hub">← HUB PRINCIPAL</a><p class="eyebrow">SOBRE O PROJETO</p><h1>Manual do<br><span class="accent">explorador.</span></h1><p class="hero-text">ARQ//QUEST transforma a revisão de Arquitetura Computacional em uma pequena aventura de navegador. Use as dicas quando precisar e experimente as três fases.</p><a class="button ghost" href="#hub">VOLTAR AO HUB</a></section>
+  </main>
+  <footer><span>ARQ//QUEST © 2026</span><span class="mono">NO SAVE DATA REQUIRED // PLAY IN BROWSER</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
